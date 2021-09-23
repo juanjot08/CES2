@@ -1,5 +1,9 @@
 package net.SoftwareDos.BackendJava.Services;
 
-public class UserServiceInterface {
+import net.SoftwareDos.BackendJava.Shared.dto.Userdto;
+
+public interface UserServiceInterface {
     
+    public Userdto createUser(Userdto userdto);
+
 }
