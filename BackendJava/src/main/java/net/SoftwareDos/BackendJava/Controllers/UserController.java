@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import net.SoftwareDos.BackendJava.Models.Request.UserDetailRequestModel;
 import net.SoftwareDos.BackendJava.Models.Responses.UserRest;
 import net.SoftwareDos.BackendJava.services.UserServiceInterface;
@@ -22,6 +23,7 @@ public class UserController {
     @Autowired
     UserServiceInterface userService;
 
+    
     @GetMapping
     public String getUser() {
         return "Obteniendo usuario";
@@ -33,16 +35,17 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser(@RequestBody UserDetailRequestModel userDetails) {
+    public UserRest createUser(@RequestBody UserDetailRequestModel userDetails) {
+
         UserRest userToReturn = new UserRest();
 
         UserDTO userDTO = new UserDTO();
 
         BeanUtils.copyProperties(userDetails, userDTO);
 
-        UserDTO createUser = userService.createUser(userDTO);
+        UserDTO createdUser = userService.createUser(userDTO);
 
-        BeanUtils.copyProperties(createUser, userToReturn);
+        BeanUtils.copyProperties(createdUser, userToReturn);
 
         return userToReturn;
     }
