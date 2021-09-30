@@ -11,7 +11,7 @@ public class BackendJavaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackendJavaApplication.class, args);
 		new UserController();
-		System.out.println("Holis");
+		System.out.println("Bonsoir");
 	}
 
 }
