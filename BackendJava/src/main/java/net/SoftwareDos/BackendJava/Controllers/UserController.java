@@ -3,7 +3,6 @@ package net.SoftwareDos.BackendJava.Controllers;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import net.SoftwareDos.BackendJava.Models.Request.UserDetailRequestModel;
 import net.SoftwareDos.BackendJava.Models.Responses.UserRest;
 
-import net.SoftwareDos.BackendJava.services.UserServiceInterface;
-import net.SoftwareDos.BackendJava.shared.dto.UserDTO;
+import net.SoftwareDos.BackendJava.Services.UserServiceInterface;
+import net.SoftwareDos.BackendJava.Shared.dto.UserDTO;
 
 
 
